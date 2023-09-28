@@ -1,0 +1,8 @@
+- name: Print available patches for Windows
+  hosts: windows
+
+  tasks:
+    - name: Use Windows Update to find updated for the default group
+      ansible.windows.win_updates:
+        category_names: '*'
+        state: searched
