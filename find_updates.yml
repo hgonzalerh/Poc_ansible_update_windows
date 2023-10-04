@@ -6,3 +6,13 @@
       ansible.windows.win_updates:
         category_names: '*'
         state: searched
+      register: patch_results
+
+    - name: Download any updates that were detected previously
+      ansible.windows.win_updates:
+        category_names: '*'
+        state: downloaded
+      when: patch_results.found_update_count | bool
+      
+
+    
