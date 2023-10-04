@@ -14,5 +14,10 @@
         state: downloaded
       when: patch_results.found_update_count | bool
       
-
+    - name: Apply any patches without rebooting
+      ansible.windows.win_updates:
+        category_names: '*'
+        state: installed
+        reboot: false
+      when: patch_results.found_update_count | bool
     
