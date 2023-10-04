@@ -1,0 +1,6 @@
+- hosts: windows
+  gather_facts: false
+  tasks:
+    - name: reboot the machine and wait until it comes back
+      ansible.windows.win_command:
+        cmd: shutdown /s
