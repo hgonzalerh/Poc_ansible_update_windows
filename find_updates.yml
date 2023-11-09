@@ -1,4 +1,4 @@
-- name: Print available patches for Windows
+- name: Find, download and apply patches for Windows
   hosts: windows
 
   tasks:
