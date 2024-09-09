@@ -1,0 +1,9 @@
+- name: Find, download and apply patches for Windows
+  hosts: windows
+  tasks:      
+    - name: Apply any patches without rebooting
+      ansible.windows.win_updates:
+        category_names: '*'
+        state: installed
+        reboot: false
+    
