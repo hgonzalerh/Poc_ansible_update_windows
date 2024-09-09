@@ -1,6 +1,7 @@
 - hosts: windows
-  gather_facts: false
+  gather_facts: true
   tasks:
     - name: reboot the machine and wait until it comes back
       ansible.windows.win_reboot:
         reboot_timeout: 3600
+      when: ansible_reboot_pending
