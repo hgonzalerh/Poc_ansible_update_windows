@@ -1,0 +1,8 @@
+- name: Find, download and apply patches for Windows
+  hosts: windows
+
+  tasks:
+    - name: Download any updates that were detected previously
+      ansible.windows.win_updates:
+        category_names: '*'
+        state: downloaded
