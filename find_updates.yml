@@ -1,4 +1,4 @@
-- name: Find, download and apply patches for Windows
+- name: Find patches for Windows
   hosts: windows
   tasks:
     - name: Use Windows Update to find updated for the default group
