@@ -1,4 +1,4 @@
-- name: Find, download and apply patches for Windows
+- name: Find and download patches for Windows
   hosts: windows
 
   tasks:
