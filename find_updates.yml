@@ -3,7 +3,19 @@
   tasks:
     - name: Use Windows Update to find updated for the default group
       ansible.windows.win_updates:
-        state: searched
+        state: downloaded
+        category_names:
+          - Feature Updates
+          - Quality Updates
+          - Security Updates
+          - Non-Security Updates
+          - Cumulative Updates
+          - Security-only Updates
+          - Servicing Stack Updates (SSUs)
+          - Driver Updates
+          - Definition Updates
+          - Out-of-Band (OOB) Updates
+          - Preview Updates
       register: patch_results
 
     - name: Print the available patches
