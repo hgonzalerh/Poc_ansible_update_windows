@@ -3,7 +3,7 @@
   tasks:
     - name: Use Windows Update to find updated for the default group
       ansible.windows.win_updates:
-        state: downloaded
+        state: searched
         category_names:
           - Feature Updates
           - Quality Updates
@@ -17,6 +17,8 @@
           - Out-of-Band (OOB) Updates
           - Preview Updates
       register: patch_results
+      become: true
+      become_method: ansible.builtin.runas
 
     - name: Print the available patches
       ansible.builtin.debug:
