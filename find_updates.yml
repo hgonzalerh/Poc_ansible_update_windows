@@ -19,6 +19,7 @@
       register: patch_results
       become: true
       become_method: ansible.builtin.runas
+      become_user: SYSTEM
 
     - name: Print the available patches
       ansible.builtin.debug:
