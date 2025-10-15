@@ -1,25 +1,11 @@
 - name: Find patches for Windows
-  hosts: windows
+  hosts: all
   tasks:
-    - name: Use Windows Update to find updated for the default group
+    - name: Use Windows Update to find updates for the default group
       ansible.windows.win_updates:
         state: searched
-        category_names:
-          - Feature Updates
-          - Quality Updates
-          - Security Updates
-          - Non-Security Updates
-          - Cumulative Updates
-          - Security-only Updates
-          - Servicing Stack Updates (SSUs)
-          - Driver Updates
-          - Definition Updates
-          - Out-of-Band (OOB) Updates
-          - Preview Updates
+        category_names: '*'
       register: patch_results
-      become: true
-      become_method: ansible.builtin.runas
-      become_user: SYSTEM
 
     - name: Print the available patches
       ansible.builtin.debug:
