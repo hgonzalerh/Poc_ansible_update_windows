@@ -1,5 +1,5 @@
 - name: Find patches for Windows
-  hosts: all
+  hosts: windows
   tasks:
     - name: Use Windows Update to find updates for the default group
       ansible.windows.win_updates:
