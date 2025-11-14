@@ -5,5 +5,5 @@
       ansible.windows.win_updates:
         category_names: '*'
         state: installed
-        reboot: false
+        reboot: true
     
