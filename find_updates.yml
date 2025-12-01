@@ -5,7 +5,6 @@
       ansible.windows.win_updates:
         state: searched
         category_names: '*'
-        server_selection: windows_update
       register: patch_results
 
     - name: Print the available patches
